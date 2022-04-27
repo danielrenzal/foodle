@@ -14,7 +14,7 @@ function RecipeCardList({cards}){
                             
                             <div className="food-card-info">
                                 <h2>{card.title}</h2>
-                                <button onClick={()=>navigate(`/recipe/${card.id}`)}>View recipe</button>
+                                <button onClick={()=>navigate(`/foodle/recipe/${card.id}`)}>View recipe</button>
                             </div>
                             
                         </article>

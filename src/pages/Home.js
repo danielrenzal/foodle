@@ -36,7 +36,7 @@ function Home(){
 
     const submitSearch = (e) => {
         e.preventDefault();
-        navigate(`/search/${searchKeyword}`);
+        navigate(`/foodle/search/${searchKeyword}`);
         setShowInput(false);
     }
 
@@ -95,7 +95,7 @@ function Home(){
                     </button>
             </header>
                 <Routes>
-                    <Route path="/" element={
+                    <Route path="/foodle/" element={
                         <main className="main-content">
                         <section className="category-menu" id={isCategoryMenuOpen ? "open" : ""}>
                             <button className="close-category" onClick={toggleCategory}>
@@ -133,8 +133,8 @@ function Home(){
                             {url === null ? <Discover title="Discover" toggleCategory={toggleCategory}/> : <Browse title="Browse" url={url} toggleCategory={toggleCategory}/>}
                         </main>
                     }/>
-                    <Route path="/search/:keyword" element={<Search />}/>
-                    <Route path="/recipe/:recipeID" element={<RecipeInfo />}/>
+                    <Route path="/foodle/search/:keyword" element={<Search />}/>
+                    <Route path="/foodle/recipe/:recipeID" element={<RecipeInfo />}/>
 
             
             </Routes>
