@@ -36,8 +36,11 @@ function Home(){
 
     const submitSearch = (e) => {
         e.preventDefault();
-        navigate(`/foodle/search/${searchKeyword}`);
-        setShowInput(false);
+        if(searchKeyword){
+            navigate(`/foodle/search/${searchKeyword}`);
+            setShowInput(false);
+        }
+        
     }
 
 
