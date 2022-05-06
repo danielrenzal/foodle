@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/foodle/static/css/main.33139160.css",
-    "main.js": "/foodle/static/js/main.ab79c9aa.js",
-    "index.html": "/foodle/index.html",
-    "main.33139160.css.map": "/foodle/static/css/main.33139160.css.map",
-    "main.ab79c9aa.js.map": "/foodle/static/js/main.ab79c9aa.js.map"
+    "main.css": "/foodle/foodle/static/css/main.33139160.css",
+    "main.js": "/foodle/foodle/static/js/main.ab79c9aa.js",
+    "index.html": "/foodle/foodle/index.html",
+    "main.33139160.css.map": "/foodle/foodle/static/css/main.33139160.css.map",
+    "main.ab79c9aa.js.map": "/foodle/foodle/static/js/main.ab79c9aa.js.map"
   },
   "entrypoints": [
     "static/css/main.33139160.css",
