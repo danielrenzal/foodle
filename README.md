@@ -1,7 +1,7 @@
 # Foodle
 
 ## Description
-A website to search for different food recipes using the [Spoonacular API](https://spoonacular.com/food-api/). This project is made to be included for my sample projects collection for my portfolio as a beginner front-end developer. This project was also bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A website to search for different food recipes using the [Spoonacular API](https://spoonacular.com/food-api/). This project is made to be included for my sample projects collection for my portfolio as a beginner front-end developer. This project was also created with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Technologies Used
 - React
