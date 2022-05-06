@@ -58,10 +58,10 @@ main {
   align-items: flex-start;
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   background-color: rgb(238, 238, 238);
+  border-bottom: 2px solid rgb(216, 216, 216);
 }
 .home-header .form-container#open .wrapper {
   display: flex;
@@ -118,7 +118,6 @@ main {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 0.5em;
   flex-wrap: wrap;
   border: none;
   border-radius: 3px;
@@ -130,28 +129,32 @@ main {
   padding: 0.3em;
 }
 .category-menu .selected-categories-container .selected-category {
+  display: flex;
   cursor: pointer;
   padding: 0.3em;
   background-color: rgb(57, 116, 80);
   color: rgb(238, 238, 238);
   border-radius: 3px;
   text-transform: capitalize;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 .category-menu .selected-categories-container .selected-category span {
-  font-family: sans-serif;
-  display: inline-block;
-  text-align: center;
+  display: flex;
   background-color: rgba(255, 255, 255, 0.575);
-  color: rgb(57, 116, 80);
-  padding: 0.25em 0.1em;
-  height: 1.5em;
-  width: 1.5em;
-  border-radius: 50%;
   margin-left: 0.3em;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+.category-menu .selected-categories-container .selected-category span svg {
+  width: 0.5em;
+}
+.category-menu .selected-categories-container .selected-category span svg path {
+  stroke-width: 15px;
+  stroke: rgb(57, 116, 80);
 }
 .category-menu .categories {
   display: grid;
-  gap: 2em;
 }
 .category-menu .categories h3 {
   margin-bottom: 1em;
@@ -162,7 +165,10 @@ main {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+}
+.category-menu .categories ul li {
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 .category-menu .categories ul li button {
   font-size: 0.875rem;
@@ -177,11 +183,14 @@ main {
   border-color: rgb(57, 116, 80);
   color: white;
 }
+.category-menu .categories > div {
+  margin-bottom: 2em;
+}
 
 .recipes-section {
   border-top: 2px solid rgb(216, 216, 216);
   background-color: rgb(238, 238, 238);
-  padding: 1em;
+  padding: 1em 0 1em 1em;
 }
 .recipes-section .open-category {
   margin-bottom: 1em;
@@ -194,8 +203,7 @@ main {
 }
 .recipes-section .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .recipes-section .food-card {
   background-color: rgb(247, 247, 247);
@@ -203,6 +211,8 @@ main {
   color: rgb(65, 65, 65);
   height: fit-content;
   border-radius: 5px;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 .recipes-section .food-card img, .recipes-section .food-card .img-placeholder {
   object-fit: cover;
@@ -221,10 +231,10 @@ main {
 }
 .recipes-section .food-card .food-card-info {
   display: grid;
-  gap: 1.5em;
   padding: 0.5em 0.5em 1em;
 }
 .recipes-section .food-card h2 {
+  margin-bottom: 1.5em;
   height: 3em;
   font-size: 1.125rem;
   line-height: 150%;
@@ -262,20 +272,22 @@ main {
 }
 .recipe-infos .time-serving-info {
   display: flex;
-  gap: 2em;
   justify-content: center;
 }
 .recipe-infos .time-serving-info span {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 .recipe-infos .time-serving-info span p:nth-child(1) {
   font-size: 0.875rem;
+  margin-right: 0.5em;
 }
 .recipe-infos .time-serving-info span p:nth-child(2) {
   font-weight: bold;
   font-size: 1.125rem;
+  margin-left: 0.5em;
 }
 .recipe-infos img {
   width: 100%;
@@ -323,13 +335,13 @@ main {
   }
   .home-header .form-container .search-form {
     display: flex;
-    gap: 0.5em;
   }
   .home-header .form-container button {
     padding: 0.875em;
     background-color: rgb(57, 116, 80);
     border: none;
     border-radius: 5px;
+    margin-left: 0.5em;
   }
   .home-header .form-container button svg path {
     fill: rgb(247, 247, 247);
@@ -354,7 +366,7 @@ main {
     padding: 1.5em 1em;
     position: relative;
     transform: unset;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   .category-menu::-webkit-scrollbar {
     width: 0;
@@ -371,7 +383,7 @@ main {
     overflow: auto;
   }
   .recipes-section .card-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
   .recipes-section h1 {
     font-size: 2.2rem;
@@ -383,6 +395,7 @@ main {
   .recipe-infos {
     padding-left: 10%;
     padding-right: 10%;
+    min-height: calc(100vh - 92px);
   }
   .recipe-infos header h1 {
     font-size: 3em;
@@ -395,10 +408,11 @@ main {
   .recipe-infos img {
     max-width: 30em;
     grid-area: image;
-    justify-self: center;
+    justify-self: end;
   }
   .recipe-infos .ingredients {
     grid-area: ingredients;
+    padding-top: 0;
   }
   .recipe-infos .ingredients, .recipe-infos .instructions {
     text-align: left;
@@ -413,16 +427,16 @@ main {
     width: 100%;
     column-count: 3;
     column-width: 400px;
-    column-gap: 2em;
   }
-}
-*::-webkit-scrollbar {
-  width: 0.5em;
-}
-*::-webkit-scrollbar-track {
-  background: rgb(238, 238, 238);
-}
-*::-webkit-scrollbar-thumb {
-  background-color: rgb(57, 116, 80);
-  border-radius: 5px;
+
+  *::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  *::-webkit-scrollbar-track {
+    background: rgb(238, 238, 238);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(57, 116, 80);
+    border-radius: 5px;
+  }
 }
