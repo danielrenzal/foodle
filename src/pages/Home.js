@@ -86,7 +86,9 @@ function Home(){
                         </button>
                         <form className="search-form" onSubmit={submitSearch}>
                             <input onChange={(e)=> setSearchKeyword(e.target.value)} value={searchKeyword} type="search" name="search-input" id="search-=input" placeholder="search"/>
-                            <button type="submit" className="search-btn"><svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68"><g transform="translate(-222 -188)"><path d="M28.25,6A22.25,22.25,0,1,0,50.5,28.25,22.249,22.249,0,0,0,28.25,6m0-6A28.25,28.25,0,1,1,0,28.25,28.281,28.281,0,0,1,28.25,0Z" transform="translate(222 188)" fill="#fff"/><path d="M17,20a2.991,2.991,0,0,1-2.121-.879l-17-17a3,3,0,0,1,0-4.243,3,3,0,0,1,4.243,0l17,17A3,3,0,0,1,17,20Z" transform="translate(270 236)" fill="#fff"/></g></svg></button>
+                            <button type="submit" className="search-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68"><g transform="translate(-222 -188)"><path d="M28.25,6A22.25,22.25,0,1,0,50.5,28.25,22.249,22.249,0,0,0,28.25,6m0-6A28.25,28.25,0,1,1,0,28.25,28.281,28.281,0,0,1,28.25,0Z" transform="translate(222 188)" fill="#fff"/><path d="M17,20a2.991,2.991,0,0,1-2.121-.879l-17-17a3,3,0,0,1,0-4.243,3,3,0,0,1,4.243,0l17,17A3,3,0,0,1,17,20Z" transform="translate(270 236)" fill="#fff"/></g></svg>
+                            </button>
                         </form>
                     </div>
                     </div>
@@ -108,7 +110,12 @@ function Home(){
                                         <p>Choose a category</p>
                                         :
                                         selected.map((item, index)=>{
-                                            return <li key={index} onClick={()=>removeSelected(item)} className="selected-category">{item}<span>x</span></li>
+                                            return <li key={index} onClick={()=>removeSelected(item)} className="selected-category">
+                                                        {item}
+                                                        <span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="81" height="81" viewBox="0 0 81 81"><g transform="translate(-512.5 -12.5)"><path d="M75,78a2.991,2.991,0,0,1-2.121-.879l-75-75a3,3,0,0,1,0-4.243,3,3,0,0,1,4.243,0l75,75A3,3,0,0,1,75,78Z" transform="translate(515.5 15.5)" fill="#707070"/><path d="M0,78a2.991,2.991,0,0,1-2.121-.879,3,3,0,0,1,0-4.243l75-75a3,3,0,0,1,4.243,0,3,3,0,0,1,0,4.243l-75,75A2.991,2.991,0,0,1,0,78Z" transform="translate(515.5 15.5)" fill="#707070"/></g></svg>
+                                                        </span>
+                                                   </li>
                                         })
                                     }
                                 </ul>
