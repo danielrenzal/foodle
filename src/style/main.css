@@ -70,16 +70,16 @@ main {
 }
 .home-header .form-container#open .search-form {
   display: flex;
-  flex: 1;
+  width: 100%;
 }
 .home-header .form-container#open input {
   font-size: 0.875rem;
   margin: 0 1em;
   padding: 1em;
-  flex: 1;
   background: none;
   border: none;
   border-bottom: 2px solid rgb(65, 65, 65);
+  width: 100%;
 }
 .home-header .form-container#open button {
   display: flex;
